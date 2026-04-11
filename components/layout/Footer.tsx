@@ -6,6 +6,7 @@ const shopLinks = [
   { href: '/collections/suit-sets', label: 'Suit Sets' },
   { href: '/collections/sharara-suits', label: 'Sharara Suits' },
   { href: '/collections/new-arrivals', label: 'New Arrivals' },
+  { href: '/sale', label: 'Sale' },
 ];
 
 const helpLinks = [

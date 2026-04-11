@@ -57,6 +57,41 @@ const featuredProducts = [
   },
 ];
 
+const saleProducts = [
+  {
+    handle: 'sunlit-zari-suit-set',
+    title: 'Sunlit Zari Suit Set',
+    salePrice: '₹8,900',
+    originalPrice: '₹12,500',
+    image: 'https://images.pexels.com/photos/19401642/pexels-photo-19401642.jpeg?cs=srgb&dl=pexels-dhanno-19401642.jpg&fm=jpg',
+    discount: '29% Off',
+  },
+  {
+    handle: 'blush-eid-coord',
+    title: 'Blush Eid Co-ord',
+    salePrice: '₹9,600',
+    originalPrice: '₹13,800',
+    image: 'https://images.pexels.com/photos/26973348/pexels-photo-26973348.jpeg?cs=srgb&dl=pexels-dhanno-26973348.jpg&fm=jpg',
+    discount: '30% Off',
+  },
+  {
+    handle: 'ivory-day-sharara',
+    title: 'Ivory Day Sharara',
+    salePrice: '₹14,200',
+    originalPrice: '₹19,700',
+    image: 'https://images.pexels.com/photos/14100162/pexels-photo-14100162.jpeg?cs=srgb&dl=pexels-chinarianphotographer-14100162.jpg&fm=jpg',
+    discount: '28% Off',
+  },
+  {
+    handle: 'plum-occasion-suit',
+    title: 'Plum Occasion Suit',
+    salePrice: '₹10,500',
+    originalPrice: '₹15,200',
+    image: 'https://images.pexels.com/photos/20407204/pexels-photo-20407204.jpeg?cs=srgb&dl=pexels-dhanno-20407204.jpg&fm=jpg',
+    discount: '31% Off',
+  },
+];
+
 const lookbookStrip = [
   {
     title: 'City Mehendi',
@@ -164,6 +199,39 @@ export default function Home() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding">
+        <div className="container">
+          <div className="sale-banner">
+            <div>
+              <span className="kicker">Sale Edit</span>
+              <h2 className="mt-4">Selected Styles, Limited Window</h2>
+              <p className="mt-3">
+                Curated markdowns across suit sets and sharara statements. Once sold out, pieces may not return.
+              </p>
+            </div>
+            <Link href="/sale" className="btn btn-pop">Shop Sale</Link>
+          </div>
+
+          <div className="product-grid mt-8">
+            {saleProducts.map((product) => (
+              <Link key={product.handle} href={`/products/${product.handle}`} className="product-card-modern">
+                <div className="product-image-wrap">
+                  <img src={product.image} alt={product.title} />
+                  <span className="sale-tag">{product.discount}</span>
+                </div>
+                <div className="product-body">
+                  <h3 className="product-title">{product.title}</h3>
+                  <p className="product-price">{product.salePrice}</p>
+                  <p className="lead-note">
+                    <span className="sale-original-price">{product.originalPrice}</span> · Sale price
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

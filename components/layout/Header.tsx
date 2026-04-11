@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/collections/suit-sets', label: 'Suit Sets' },
   { href: '/collections/sharara-suits', label: 'Sharara Suits' },
   { href: '/collections/new-arrivals', label: 'New Arrivals' },
+  { href: '/sale', label: 'Sale', isSale: true },
   { href: '/lookbook', label: 'Lookbook' },
   { href: '/about', label: 'About' },
 ];
@@ -45,7 +46,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`nav-link ${pathname === link.href ? 'active' : ''}`}
+              className={`nav-link ${pathname === link.href ? 'active' : ''} ${link.isSale ? 'nav-link-sale' : ''}`}
             >
               {link.label}
             </Link>
