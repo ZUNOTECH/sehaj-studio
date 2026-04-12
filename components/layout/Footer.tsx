@@ -24,17 +24,15 @@ const companyLinks = [
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-glow" aria-hidden="true" />
       <div className="container">
         <div className="footer-top">
-          <div className="footer-brand-block">
-            <p className="footer-kicker">Sehaj Studio</p>
-            <h3>Quiet Luxury With A Bold Indian Pulse</h3>
+          <div className="footer-brand">
+            <h3>Sehaj Studio</h3>
             <p>
               Contemporary Indian occasion wear with softness, structure, and elevated drape.
               Crafted for intimate celebrations and statement entrances.
             </p>
-            <div className="footer-trust-strip">
+            <div className="footer-pills">
               <span>COD</span>
               <span>Pan-India Shipping</span>
               <span>Secure Checkout</span>
@@ -83,15 +81,6 @@ export function Footer() {
                 <li><a href="mailto:hello@sehajstudio.com">Email</a></li>
               </ul>
             </div>
-          </div>
-
-          <div className="footer-newsletter">
-            <h4>The Insider Edit</h4>
-            <p>Early access to drops, styling notes, and occasion curation from Sehaj Studio.</p>
-            <form className="footer-subscribe-form">
-              <input type="email" placeholder="Enter your email" aria-label="Email address" />
-              <button type="button">Join</button>
-            </form>
           </div>
         </div>
 
