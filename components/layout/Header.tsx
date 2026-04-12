@@ -25,6 +25,8 @@ const utilityLinks = [
   { href: '/pages/contact', label: 'Contact' },
 ];
 
+const promoNotes = ['Free Express Shipping ₹3999+', 'COD Available Across India', 'Easy Exchange Support'];
+
 export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,6 +34,14 @@ export function Header() {
 
   return (
     <header className="site-header">
+      <div className="top-ribbon">
+        <div className="container top-ribbon-inner">
+          {promoNotes.map((note) => (
+            <span key={note}>{note}</span>
+          ))}
+        </div>
+      </div>
+
       <div className="header-inner">
         <button
           type="button"
@@ -54,8 +64,11 @@ export function Header() {
           ))}
         </nav>
 
-        <Link href="/" className="brand-mark" aria-label="Sehaj Studio Home">
-          Sehaj <span className="accent">Studio</span>
+        <Link href="/" className="brand-mark brand-lockup" aria-label="Sehaj Studio Home">
+          <span className="brand-line">
+            Sehaj <span className="accent">Studio</span>
+          </span>
+          <span className="brand-subline">Modern Indian Occasionwear</span>
         </Link>
 
         <div className="header-icons">
@@ -88,7 +101,7 @@ export function Header() {
           />
           <aside className="mobile-menu" aria-label="Mobile Menu">
             <div className="mobile-menu-header">
-              <span className="brand-mark" style={{ fontSize: '1rem', justifySelf: 'start' }}>
+              <span className="brand-mark mobile-brand-mark">
                 Sehaj <span className="accent">Studio</span>
               </span>
               <button
@@ -101,12 +114,14 @@ export function Header() {
               </button>
             </div>
 
+            <p className="mobile-menu-note">Soft tailoring. Rich textures. Occasion-ready silhouettes.</p>
+
             <nav className="mobile-menu-links">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="mobile-link"
+                  className={`mobile-link ${link.isSale ? 'mobile-link-sale' : ''}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
