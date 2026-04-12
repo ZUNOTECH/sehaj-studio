@@ -37,6 +37,10 @@ export function Footer() {
               <span>Pan-India Shipping</span>
               <span>Secure Checkout</span>
             </div>
+            <div className="footer-brand-actions">
+              <Link href="/pages/contact">Style & Order Help</Link>
+              <a href="mailto:hello@sehajstudio.com">hello@sehajstudio.com</a>
+            </div>
           </div>
 
           <div className="footer-links-wrap">
