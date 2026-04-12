@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
+import { Search, Heart, ShoppingBag, Menu, X, User } from 'lucide-react';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useCartStore } from '@/store';
@@ -19,6 +19,7 @@ const navLinks = [
 ];
 
 const utilityLinks = [
+  { href: '/account', label: 'My Account' },
   { href: '/pages/size-guide', label: 'Size Guide' },
   { href: '/pages/shipping-returns', label: 'Shipping & Returns' },
   { href: '/pages/contact', label: 'Contact' },
@@ -60,6 +61,9 @@ export function Header() {
         <div className="header-icons">
           <Link href="/search" className="icon-btn" aria-label="Search">
             <Search size={18} />
+          </Link>
+          <Link href="/account" className="icon-btn" aria-label="My account">
+            <User size={18} />
           </Link>
           <Link href="/wishlist" className="icon-btn" aria-label="Wishlist">
             <Heart size={18} />

@@ -10,6 +10,7 @@ const shopLinks = [
 ];
 
 const helpLinks = [
+  { href: '/account', label: 'My Account' },
   { href: '/pages/size-guide', label: 'Size Guide' },
   { href: '/pages/shipping-returns', label: 'Shipping & Returns' },
   { href: '/pages/contact', label: 'Contact Us' },
