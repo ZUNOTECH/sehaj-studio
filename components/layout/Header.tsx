@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Search, Heart, ShoppingBag, Menu, X, User } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useCartStore } from '@/store';
 
@@ -30,8 +30,15 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { setIsOpen } = useCartStore();
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${isMobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="header-inner">
         <button
           type="button"
